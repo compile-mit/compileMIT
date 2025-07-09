@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+            font-size: 16px; /* 1rem = 16px */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body {
+            background: linear-gradient(to bottom right, #1f2937, #111827);
+            color: #fff;
+            padding: 0;
+            font-size: 1rem; /* 16px */
+        }
+        nav {
+            background-color:#111827;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #374151;
+            position: sticky;
+            top: 0;
+            z-index: 100; 
+        }
+        nav .logo {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 800;
+            color: #3b82f6;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #e5e7eb;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem; /* 16px */
+        }
+        nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .mob{
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            nav .pc {
+                display: none;
+            }
+            nav .mob {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #111827;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            nav ul li {
+                margin-bottom: 1rem;
+            }
+            @media screen and (max-width: 480px) {
+                nav ul li {
+                    margin-bottom: 0.5rem;
+                }
+                
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CompileMIT Club</div>
+        <div class="pc">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+        <div class="mob">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="dropdown">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+    </nav>
+    <header>
+        <h1>CompileMIT Club</h1>
+        <p>A community of tech enthusiasts from MIT College, Kathmandu, empowering innovation, collaboration, and growth.</p>
+      </header>
+      <section class="features" id="features">
+        <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Innovation</h3>
+            <p>Drive new ideas with cutting-edge tech and creative minds.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Collaboration</h3>
+            <p>Work together on projects and grow as a team.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Development</h3>
+            <p>Learn and build real-world applications with fellow devs.</p>
+          </div>
+      </section>
+      <section class="members-section" id="members">
+        <h2>Our Members</h2>
+        <div class="main-member">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="President">
+            <h4>Member Name 1</h4>
+            <p>President</p>
+          </div>
+        </div>
+        <div class="members">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Vice President">
+            <h4>Member Name 2</h4>
+            <p>Secretary</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Secretary">
+            <h4>Member Name 3</h4>
+            <p>Tech Lead</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Designer">
+            <h4>Member Name 4</h4>
+            <p>Webmaster</p>
+          </div>
+          </div>
+          <div class="members">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Treasurer">
+            <h4>Member Name 5</h4>
+            <p>Treasurer</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Project Manager">
+            <h4>Member Name 6</h4>
+            <p>Project Manager</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Tech Lead">
+            <h4>Member Name 7</h4>
+            <p>Social Media Manager</p>
+          </div>
+        </div>
+      </section>
+        <section class="join" id="join">
+            <h2>Join Us</h2>
+            <p>Become a part of our community and start your journey in tech!</p>
+            <a href="#contact" class="join-button">Join Now</a>
+        </section>
+          <!-- Footer Section -->
+  <footer>
+    <p>© 2025 CompileMIT Club. All rights reserved.</p>
+    <p>Made with ❤️ by the CompileMIT Team</p>
+  </footer>
+
+</body>
+</html>

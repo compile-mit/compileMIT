@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join CompileMIT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="https://media-hosting.imagekit.io/64ff49dede3c4a0e/logo.png?Expires=1839304913&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=bMeIY9PAXS~zpFPgrc~gJF680UX8J8efQP6nj1g8TzVFJtHT5p3cuyT0GFyVyMPPYSaRIkZW1GkpwnjwtlFw6LOEOHrFJ4d26FkX5yNFtZ1d1jgHoXtLdHEB-sPk6IK0jpxhB6JqbHL9gLnss2-YQ5E6MJqxpEqvmweGqtaWuesyJNboPCrya80Bl1pBtT5ey-07elTgcwlqv2~yAwQV9-7LxrcoySt4MxBPEpFaK2CIaWFNkHaUq1R6UUveY5bcJoCH06ZcjN4YlagCIMgEY6UPIHKygd878uNId1TofsJ8Vsp7swNQBxv4qzh8HRdPwr4-NhglDZiOanMhEhHCIA__">
+
+  <style>
+    :root {
+  --primary: #6366f1;
+  --accent: #facc15;
+  --bg: linear-gradient(135deg, #8b89a0, #354d72);
+  --glass: rgba(255, 255, 255, 0.1);
+  --white: #fff;
+  --text: #e5e7eb;
+  --blur: blur(12px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+.card {
+  width: auto;
+  /* height: 40%; */
+  max-width: 700px;
+  background: var(--glass);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+input, textarea {
+  width: 100%;
+  /* max-width:350px; */
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: rgba(223, 212, 212, 0.15);
+  color: var(--dark);
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #101011;
+  opacity: 0.5;
+}
+textarea{
+  resize: none;
+  height: 5rem;
+}
+
+button.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #eab308;
+  transform: translateY(-2px);
+}
+section.hero{
+  height: 100vh;
+}
+main{
+  flex: 1;
+}
+/* Footer */
+footer {
+  background: var(--dark);
+  padding: 2rem;
+  width: 100vw;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  input, textarea {
+    font-size: 0.95rem;
+  }
+
+  button.btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  button.btn {
+    font-size: 0.9rem;
+  }
+}
+</style>
+</head>
+<body>
+  <!-- <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="https://media-hosting.imagekit.io/f7d44cf76c5f41c1/favicon.png?Expires=1839304913&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=JIeRx~yS3m9t5r~wLMCOvLjmI8UQdbW7BCbdvs-8GMAN5ITFU-aZwI1O52IPO5-sQfAU7ejfR2x0DYfJmq7vHnh1U5wV0Cl1EbUZvdkRFz1p46UGj~GI1j0dVxoS27~r~aZdjY5Ve1MRlHYzIp6T0u0urNDWlftfQx7Xc-R6pGV1~aXYwMVh-tbOD38DUHn7t9Ke6Tu8-oYKPkFRlddxCSwnfj4fgfxDwjXWgg7QySnUEtR7I563esTvWv03KO9Wu0yd1po6O0vszIMhswmX6S4-XGmjLg051tEwRNCo1QGCXxJyp4BRkY76mdLDYdNRaiv70bstSPNr7A8Z7t1nfQ__" alt="Logo"> <br>
+        </div>
+      <ul class="nav-links"> -->
+        <!-- <li><a href="home">Home</a></li> -->
+        <!-- <li><a href="#features">Features</a></li> -->
+        <!-- <li><a href="#members">Members</a></li> -->
+        <!-- <li><a href="#members">Events</a></li> -->
+        <!-- <li><a href="#join">Join</a></li> -->
+      </ul>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+    <form action="submit" method="post" class="card">
+        <h2> Fill your Information</h2>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="tel" name="contact" placeholder="Contact Number" required>
+        <input type="text" name="session" placeholder="Session" required>
+        <input type="text" name="section" placeholder="Section" required>
+        <textarea name="message" id="message" class="message"placeholder="Why do you want to be a part of CompileMIT?"></textarea>
+        <button class="btn" type="submit">Submit</button>
+    </form>    
+    </section>
+    </main>
+    <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.toggle('active');
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href'))?.scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+       // Fetch footer
+  // fetch('footer.html')
+  //   .then(response => response.text())
+  //   .then(data => {
+  //     document.body.insertAdjacentHTML('beforeend', data);
+  //   });
+    
+</script>
+</body>
+</html>

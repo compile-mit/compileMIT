@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompileMIT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="icon" href="logo.png">
+</head>
+<style>
+  :root {
+    --bg-color: #fdfdfd;
+    --text-color: #333;
+    --main-color: #754ef9;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .2);
+}
+  .testimonial-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 1rem;
+}
+
+.testimonial-container .testimonial-wrapper {
+    position: relative;
+    max-width: 90rem;
+    width: 100%;
+    padding: 5rem;
+}
+
+.testimonial-wrapper .testimonial-box {
+    padding: 1rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.testimonial-content .testimonial-slide {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 46rem; 
+    background: var(--bg-color);
+    border-radius: 2rem;
+    box-shadow: 0 .1rem .5rem var(--shadow-color);
+    padding: 3rem 5rem;
+    border-top: .8rem solid var(--main-color);
+    border-bottom: .8rem solid var(--main-color);
+}
+
+
+.testimonial-slide img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: .5rem solid var(--bg-color);
+    outline: .5rem solid var(--main-color);
+}
+
+.testimonial-slide h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+span{
+  font-size: 1rem;
+  margin-bottom: 1.1rem ;
+}
+.testimonial-slide p {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.testimonial-box .swiper-button-next,
+.testimonial-box .swiper-button-prev {
+    color: var(--main-color);
+}
+
+.testimonial-box .swiper-button-next {
+    right: 0;
+}
+
+.testimonial-box .swiper-button-prev {
+    left: 0;
+}
+
+.testimonial-box .swiper-pagination-bullet {
+    background: rgba(0, 0, 0, .8);
+}
+
+.testimonial-box .swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+@media (max-width: 840px) {
+
+    .testimonial-container .testimonial-wrapper {
+        padding: 5rem 0;
+    }
+
+    .testimonial-content .testimonial-slide {
+        min-height: 54rem;;
+        max-height: 54rem;;
+        padding: 3rem 2rem;
+        overflow: hidden;
+    }
+
+    .testimonial-box .swiper-button-next,
+    .testimonial-box .swiper-button-prev {
+        display: none;
+    }
+    .testimonial-slide p {
+    font-size: 1.1rem;
+    text-align: left;
+}
+}
+#preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .preloader-text {
+      color: #00ff99;
+      font-size: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff99;
+      width: 0;
+      animation: typing 1s steps(10) forwards, blink 0.5s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 10ch; } /* "Compilemit" has 10 characters */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+</style>
+<div id="preloader">
+  <div class="preloader-text">Compilemit</div>
+</div>
+  <!-- NavBar fetched from js -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>CompileMIT</h1>
+      <h3>| CODE · CREATE · CONQUER |</h3> <br>
+      <p>Nepal’s premier student tech community at Model Institute of Technology (MIT) College, Kathmandu — where innovation, collaboration, and growth
+        come together.</p>
+      <a href="#members"> <button class="join-btn">Get Started <i class="fas fa-arrow-right"></i></button></a>
+    </div>
+  </section>
+  
+<!-- Members -->
+<section class="members-section" id="members">
+  <h2>Meet Our Team</h2>
+  <div class="members-grid">
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/2f/64/ed/2f64ed285c5b02ce1b98cdd3cbdfdda0.jpg" alt="Member"
+        class="member-image">
+      <h4>Asim Balami</h4>
+      <p>Club Head</p>
+      <div class="social-links">
+        <a target="_blank" href="https://www.linkedin.com/in/asim-balami-52b0b832a/"><i class="fab fa-linkedin"></i></a>
+        <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+        <a target="_blank" href="https://www.instagram.com/_asim_balami122/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/9c/c9/91/9cc991d8ea7594355b0d0169f25fc2fc.jpg" alt="Member"
+        class="member-image">
+      <h4>Bishowdeep Sharma</h4>
+      <p>Tech Lead</p>
+      <div class="social-links">
+        <!-- <a target="_blank" href="https://www.instagram.com//"><i class="fab fa-linkedin"></i></a> -->
+        <a target="_blank" href="https://github.com/Bishowdeep"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/bishow_deep/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/40/56/2e/40562ee9207cc30b4282a05a3d72b7aa.jpg" alt="Member"
+        class="member-image">
+      <h4>Nirmal Basyal</h4>
+      <p>Web Manager</p>
+      <div class="social-links">
+        <a target="_blank" href="https://www.linkedin.com/in/nirmalbasyal/"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/Nirmal46"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/nirmal__basyal/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/31/4e/5f/314e5f6fbfea52c93bb57cad511d6207.jpg" alt="Member"
+        class="member-image">
+      <h4>Bandana Pandey</h4>
+      <p>Treasurer</p>
+      <div class="social-links">
+        <!-- <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a> -->
+        <!-- <a target="_blank" href="#"><i class="fab fa-github"></i></a> -->
+        <a target="_blank" href="https://www.instagram.com/bandanasdiary_1/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="members-grid">
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/5c/e4/f4/5ce4f43d13836377fe070322167e4adc.jpg" alt="Member"
+        class="member-image">
+      <h4>Uchit Joshi</h4>
+      <p>Public Relations(PR) Manager</p>
+      <div class="social-links">
+        <a target="_blank" href="https://www.linkedin.com/in/uchit-joshi-5bb311286/"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/uchitjoshi?tab=overview&from=2025-04-01&to=2025-04-17"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/uchitjoshi.4/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/6b/f1/86/6bf18632421742b14715939c7c8514fe.jpg" alt="Member"
+        class="member-image">
+      <h4>Sangam Pandey</h4>
+      <p>Project Manager</p>
+      <div class="social-links">
+        <a target="_blank" href="https://www.linkedin.com/in/sangam-pandey-103893351/ "><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/sangam-in"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/sangam_enthu/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://i.pinimg.com/736x/1f/e8/91/1fe891c49bc3f8fee85d4e2e1335e7fa.jpg" alt="Member"
+        class="member-image">
+      <h4>Prasanna Karki</h4>
+      <p>Club Activist</p>
+      <div class="social-links">
+        <a target="_blank" href="https://www.linkedin.com/in/prasanna-karki-324a22342/"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/Prasan55"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/prash_541/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Events -->
+<section class="events" id="events">
+  <h2>Events</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fas fa-users feature-icon"></i>
+      <!-- <i class="fas fa-rocket feature-icon"></i> -->
+      <h3>Women In IT</h3>
+      <p>
+                <img src="assets/wiit.png" alt="Member"
+
+        An inspiring initiative to empower and uplift women in tech. #WIIT2025 👩‍💻
+
+      </p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-users feature-icon"></i>
+      <!-- <i class="fas fa-rocket feature-icon"></i> -->
+      <h3>MIT Extravaganza</h3>
+      <p>
+        <img src="assets/exv.jpg" alt="picture">
+        An unforgettable night of energy, talent, and pure magic! ✨ #Extravaganza2025🎭🎉
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <!-- <i class="fas fa-rocket feature-icon"></i> -->
+      <i class="fas fa-users feature-icon"></i>
+      <h3>Other Events</h3>
+
+      <p>
+        <img src="assets/cs.png" alt="picture">
+        More exciting events coming soon!
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-container" id="testimonial">
+<h2 class="heading">Valuable Testimonial</h2>
+
+<div class="testimonial-wrapper">
+  <div class="testimonial-box mySwiper">
+    <div class="testimonial-content swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="testimonial-slide swiper-slide">
+<img src="https://i.pinimg.com/736x/2f/64/ed/2f64ed285c5b02ce1b98cdd3cbdfdda0.jpg" alt="Member"
+        class="member-image">
+                  <h3>Asim Balami</h3>
+        <span>Club Head</span>
+        <p>"Being the President of CompileMIT has been a transformative experience. It’s helped me grow as a leader, improve my communication skills, and turn ideas into action. Organizing events, leading a passionate team, and connecting with fellow tech enthusiasts has not only boosted my confidence but also strengthened my career path in IT."</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="testimonial-slide swiper-slide">
+       <img src="https://i.pinimg.com/736x/9c/c9/91/9cc991d8ea7594355b0d0169f25fc2fc.jpg" alt="Member"
+        class="member-image">
+        <h3>Bishowdeep Sharma</h3>
+        <span>Tech Lead</span>
+        <p>"This community helped me grow as a developer. The events and mentorship are amazing!"</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="testimonial-slide swiper-slide">
+         <img src="https://i.pinimg.com/736x/40/56/2e/40562ee9207cc30b4282a05a3d72b7aa.jpg" alt="Member"
+        class="member-image">
+        <h3>Nirmal Basyal</h3>
+        <span>Web Manager</span>
+        <p>"Being the Web Manager for CompileMIT has been a fulfilling experience, allowing me to contribute to a community focused on collaboration, innovation, and growth. This role has enhanced my technical skills and provided valuable insights into teamwork and leadership."</p>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="testimonial-slide swiper-slide">
+         <img src="https://i.pinimg.com/736x/31/4e/5f/314e5f6fbfea52c93bb57cad511d6207.jpg" alt="Member"
+        class="member-image">
+        <h3>Bandana Pandey</h3>
+        <span>Treasurer</span>
+        <p>"Serving as the Treasurer of Compile MIT has been a transformative experience for me. It is a platform where I have developed essential skills in financial management, event coordination, and leadership. It has allowed me to apply my knowledge in real-world scenarios and build greater confidence."</p>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="testimonial-slide swiper-slide">
+        <img src="https://i.pinimg.com/736x/5c/e4/f4/5ce4f43d13836377fe070322167e4adc.jpg" alt="Member"
+        class="member-image">
+        <h3>Uchit Joshi</h3>
+        <span>PR Manager</span>
+        <p>"As the PR Manager at CompileMIT, I take pride in building strong connections and promoting meaningful collaborations. This role has helped me enhance my communication skills, strengthen team relationships, and represent the club with confidence and creativity."</p>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="testimonial-slide swiper-slide">
+        <img src="https://i.pinimg.com/736x/6b/f1/86/6bf18632421742b14715939c7c8514fe.jpg" alt="Member"
+        class="member-image">
+        <h3>Sangam Pandey</h3>
+        <span>Project Manager</span>
+        <p>"As the Project Manager at CompileMIT, I've had the opportunity to take on meaningful tasks that have truly shaped my learning journey. Each project has helped me stay on track and gain hands-on experience, steering my career in the right direction."</p>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="testimonial-slide swiper-slide">
+         <img src="https://i.pinimg.com/736x/1f/e8/91/1fe891c49bc3f8fee85d4e2e1335e7fa.jpg" alt="Member"
+        class="member-image">
+        <h3>Prasanna Karki</h3>
+        <span>Club Activist</span>
+        <p>"Being a part of CompileMIT has been one of the most rewarding experiences of my academic journey. As a club activist, I’ve had the opportunity to not only grow my technical skills but also collaborate with like-minded peers who are just as passionate about technology and innovation as I am."</p>
+      </div>
+
+    </div>
+
+    <!-- Swiper Controls -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+</section>
+
+
+
+  <!-- Join -->
+  <section class="cta-section" id="join">
+    <h2>Ready to Join Our Community?</h2>
+    <p>Start your tech journey with us today</p>
+    <!-- <a href="#"> <button class="join-btn" id="join" onclick="join()">Apply Now <i
+          class="fas fa-paper-plane"></i></button></a> -->
+          <a href="register"> <button class="join-btn" id="join">Apply Now <i
+            class="fas fa-paper-plane"></i></button></a>
+  </section>
+  <!-- Footer -->
+  <!-- <footer>
+    <div class="social-media">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy; 2024 CompileMIT Club. All rights reserved.</p>
+  </footer> -->
+
+  <script src="script.js"></script>
+  <script>
+    const container = document.getElementById('testimonialContainer');
+    const cards = container.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function createDots() {
+      cards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots(index) {
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = parseInt(entry.target.dataset.index);
+          currentIndex = index;
+          updateDots(index);
+        }
+      });
+    }, {
+      root: container,
+      threshold: 0.6
+    });
+
+    cards.forEach(card => observer.observe(card));
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        cards[currentIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length - 1) {
+        cards[currentIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      }
+    });
+
+    createDots();
+  </script>
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Toggle Dark Mode
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<script>
+  setTimeout(() => {
+    document.getElementById('preloader').style.display = 'none';
+    document.getElementById('main-content').classList.add('show');
+  }, 1300); // match typing duration
+</script>
+</body>
+
+</html>

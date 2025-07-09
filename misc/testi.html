@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonial Slider</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --secondary: #fbbf24;
+      --dark: #1f2937;
+      --light: #ffffff;
+      --background: #f8fafc;
+      --text: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .testimonial-section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .testimonial-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-wrapper {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .testimonial-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 2rem;
+    }
+
+    .testimonial-card {
+      flex: 0 0 90%;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      scroll-snap-align: center;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card h4 {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .testimonial-card span {
+      font-size: 0.85rem;
+      color: gray;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 40%;
+      background: var(--primary);
+      border: none;
+      color: white;
+      font-size: 1.25rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: var(--secondary);
+    }
+
+    .scroll-btn.left {
+      left: -1.5rem;
+    }
+
+    .scroll-btn.right {
+      right: -1.5rem;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card {
+        flex: 0 0 95%;
+      }
+
+      .scroll-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="testimonial-section">
+    <h2 class="testimonial-title">What Our Members Say</h2>
+    <div class="testimonial-wrapper">
+      <button class="scroll-btn left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+
+      <div class="testimonial-container" id="testimonialContainer">
+        <div class="testimonial-card" data-index="0">
+          <p>"Joining this club boosted my confidence. I got to work on real projects and make amazing friends!"</p>
+          <h4>Sita Sharma</h4>
+          <span>Frontend Developer</span>
+        </div>
+        <div class="testimonial-card" data-index="1">
+          <p>"This community helped me grow as a developer. The events and mentorship are amazing!"</p>
+          <h4>Ramesh Thapa</h4>
+          <span>App Developer</span>
+        </div>
+        <div class="testimonial-card" data-index="2">
+          <p>"An inspiring space where creativity meets collaboration. I loved every moment!"</p>
+          <h4>Anita KC</h4>
+          <span>UI/UX Designer</span>
+        </div>
+        <div class="testimonial-card" data-index="3">
+          <p>"The perfect place to learn and contribute. Everyone’s so helpful and skilled!"</p>
+          <h4>Dipak Maharjan</h4>
+          <span>Backend Developer</span>
+        </div>
+      </div>
+
+      <button class="scroll-btn right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <!-- <div class="dots" id="dots"></div>  -->
+  </section>
+
+  <script>
+    const container = document.getElementById('testimonialContainer');
+    const cards = container.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function createDots() {
+      cards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots(index) {
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = parseInt(entry.target.dataset.index);
+          currentIndex = index;
+          updateDots(index);
+        }
+      });
+    }, {
+      root: container,
+      threshold: 0.6
+    });
+
+    cards.forEach(card => observer.observe(card));
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        cards[currentIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length - 1) {
+        cards[currentIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      }
+    });
+
+    createDots();
+  </script>
+</body>
+</html>

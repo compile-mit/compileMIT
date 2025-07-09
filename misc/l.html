@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preloader Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Courier New', monospace;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .preloader-text {
+      color: #00ff99;
+      font-size: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff99;
+      width: 0;
+      animation: typing 2s steps(10) forwards, blink 0.5s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 10ch; } /* "Compilemit" has 10 characters */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    #main-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #main-content.show {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="preloader-text">Compilemit</div>
+  </div>
+
+  <div id="main-content">
+    <h1>Welcome to Compilemit!</h1>
+    <p>This is the main content of your website.</p>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('preloader').style.display = 'none';
+      document.getElementById('main-content').classList.add('show');
+    }, 2500); // match typing duration
+  </script>
+
+</body>
+</html>

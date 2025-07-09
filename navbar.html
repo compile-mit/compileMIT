@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="icon" href="favicon.jpeg">
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --secondary: #fbbf24;
+      --dark: #1f2937;
+      --light: #ffffff;
+      --background: #f8fafc;
+      --text: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: var(--light);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid #e2e8f0;
+      transition: background 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      display: flex;
+      font-weight: 800;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo img {
+      padding-left: 1rem;
+      height: 4rem;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--light);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+        align-items: end;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+
+      .nav-links a {
+        color: var(--text);
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+       <a href="home"> <img src="favicon.jpeg" alt="Logo"/>
+       </a></div>
+      <ul class="nav-links">
+        <li><a href="home">Home</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#testimonial">Testimonial</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+      
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      
+    </div>
+  </nav>
+
+  <script src="script.js">
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | MyApp</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --accent: #facc15;
+      --bg: linear-gradient(135deg, #8b89a0, #354d72);
+      --glass: rgba(255, 255, 255, 0.1);
+      --white: #fff;
+      --text: #e5e7eb;
+      --blur: blur(12px);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+    }
+
+    .card {
+      width: 90%;
+      height: 40%;
+      max-width: 400px;
+      background: var(--glass);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0 20px 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #d1d5db;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--accent);
+      color: #1f2937;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #eab308;
+      transform: translateY(-2px);
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+    .password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* space for the eye */
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.password-container .toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2rem;
+}
+
+  </style>
+</head>
+
+<body>
+  <form class="card" onsubmit="handleSubmit(event)">
+    <h2>Welcome</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Password" required>
+        <span class="toggle" onclick="togglePassword()">👁️</span>
+      </div>
+
+    <button type="submit">Sign In</button>
+    <div class="links">
+      <a href="#">Sign Up</a>
+      <a href="#">Forgot Password?</a>
+    </div>
+  </form>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      alert("You're in! 🔐");
+      console.log("Email:", email);
+      console.log("Password:", password);
+    }
+    function togglePassword() {
+    const pw = document.getElementById("password");
+    pw.type = pw.type === "password" ? "text" : "password";
+  }
+  </script>
+</body>
+
+</html>

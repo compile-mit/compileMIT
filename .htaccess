@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Rewrite root URL (yourdomain.com/) to index.html
+RewriteRule ^$ index.html [L]
+
+# Rewrite /home to index.html
+RewriteRule ^home$ index.html [L]
+
+# Rewrite /register to register.html
+RewriteRule ^register$ register.html [L]
+
+# Rewrite /register to submit.php
+RewriteRule ^submit$ submit.php [L]
